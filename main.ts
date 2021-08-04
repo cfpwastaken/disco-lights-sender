@@ -3,7 +3,8 @@ let show = true
 radio.setGroup(1)
 basic.forever(function () {
     let sound = input.soundLevel()
-    sound = sound - amount
+    //sound = sound - amount
+    if(sound < amount) sound = 0
     radio.sendNumber(sound)
 })
 basic.forever(() => {
